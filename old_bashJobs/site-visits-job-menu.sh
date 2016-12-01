@@ -7,8 +7,9 @@ sa_api_example.py
 #clear the screen for the job menu
 clear 
 
-#store currect directory location
+#store directory location of this job. use this to create files later.
 location=$(pwd)
+py_files=(sa_api_file-1.py sa_api_file-2.py)
 echo "Daily visits data for all sites"
 read -p "Enter start date in YYYY-MM-DD: " st
 read -p "Enter end date in YYYY-MM-DD: " ed
@@ -27,10 +28,8 @@ fi
 if [ -d $location/Daily-Visits ] 
 then 
 	mkdir $location/Daily-Visits/daily-visits-$st-$ed
-
 	#store new location in a variable for referencing
-	outputlocation = $location/Daily-Visits/daily-visits-$st-$ed
-	python sa_api_example.py 'http://www.example.com' $st $ed >> $outputlocation/daily-visits-emd-$st-$ed.txt && echo "Completed with emd" || echo "Failed to pull emd"
+	outputlocation = $location/Daily-Visits/
 else
 	echo "Directory Daily-Visits does not exists at: " $location
 	mkdir Daily-Visits
@@ -61,10 +60,14 @@ else
 	case $sel in
 			1 )
 			mkdir $outputlocation/$sel/
-			python search_analytics_api_visits-desktop.py 'http://www.example.com' $st $ed >> $outputlocation/$sel/$sel-visits-emd-$st-$ed.txt && echo "Completed with"$sel || echo "Failed to pull"$sel
+			python i 'http://www.example.com' $st $ed >> $outputlocation/job-i-$st-$ed.txt && echo "Completed with $i" || echo "Failed to pull $sel"
 			 	;;
 			* )echo "Please enter a valid selection"
 	esac
 fi
 
 
+	for i in ${py_files[@]}; 
+		do
+			python i 'http://www.example.com' $st $ed >> $outputlocation/job-i-$st-$ed.txt && echo "Completed with $i" || echo "Failed to pull $i"
+		done

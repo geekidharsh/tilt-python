@@ -4,7 +4,7 @@
 Big O : operations 
 lg: log
 
->> Usually called a dictionary or ADT (abstract data type). Maintain set of items, each item has a key, opertations you can perform:
+>> Usually called a dictionary or ADT (abstract data type). Maintain set of items, each item has a key. Opertations you can perform:
 insert(item) : over writes an existing key.
 delete(item)
 search(key): return item with a given key. 
@@ -24,7 +24,7 @@ search is lg n
 
 # Turns out this time can be optimized even more to make it a constant time : O(1). 
 
-# In python, the data type is: dict. 
+## In python, the data type is for hashmap is 'dict'. 
 dict[key] : to look up a key. The analog of search
 dict[key=]=val : insert. Analog of insert
 del D[key] : delete
@@ -34,7 +34,7 @@ In python, an item is : item = (key, value)
 
 >> Uses of hashing and dictionary searching: 
 
-1. docdist: dic for counting words.
+1. doc-dict: dic for counting words.
 2. databases: every database uses either hashing or search trees.
 3. every login passowrd table. every time user logs, hash table (dictionary) will run
 4. when compiling you need a dictionary: compilers and interpreters
@@ -50,17 +50,17 @@ In python, an item is : item = (key, value)
 	The simple approach. Just a regular table of arrays. Index of the arrays is the key. 
 	So, indexed by key. 
 	If  your item was all just integers, this will work. 
-	## Issues: 
-		1. keys may not be integers.
-		2. Gigantic memory hog. If set of possible keys is huge, then you need one slot in your array per key. That's a lot of memory (say for storing each item, you need a memory for say integer item and memory for key, again an int).
+	## Problems: 
+		1. Keys may not be integers.
+		2. Gigantic memory hog! If set of possible keys is huge, then you need one slot in your array per key. That's a lot of memory (say for storing each item, you need a memory for say every integer item and memory for key, again an int).
 
 	## Solution: 
 		1. Prehashing: 
 			Maps keys to non negative integers. 
-			In python we have a fucntion hash. hash(x) is the prehash of x. Note: python still has some problems: 
+			In python we have a function hash. hash(x) is the prehash of x. Note: python still has some problems: 
 	for example: 
-		This hash() for well for integers. But has some issues with strings, say for example below.
-		hash('/0B')= hash('1010C')= 64. This should not happen, becaause, 
+		This hash() works well for integers. But has some issues with strings, say for example below.
+		hash('/0B')= hash('1010C')= 64. This should not happen, because, 
 		ideally, 
 		hash(x) = hash(y) iff x = y.
 
