@@ -1,0 +1,38 @@
+# Lined Lists
+	
+Kinds:
+	There are three basic kinds of linked list: 
+		1. singly-linked lists, 
+		2. doubly-linked lists and 
+		3. circularly-linked lists. 
+    
+    Singly linked list or simply 'linked list':
+    	It consists of a number of data elements in which each data element has a next pointer or next reference (the link) to the element that follows. The last element in the list has an empty or null link.
+    	First element of the linked list is usually called the 'head'.
+
+    	Because the links in a singly-linked list consist only of next pointers (or references), the list can be traversed only in the forward direction, so a complete traversal of the list must begin with the first element. In other words, you need a pointer or reference to the first element of a list in order to locate all the elements in the list.
+
+    Doubly linked list:
+		A doubly-linked list eliminates many difficulties inherent in a singly-linked list. 
+
+		A doubly-linked list differs from a singly-linked list in that each element has a link to the previous element in the list in addition to the link to the next element. (The first element in the list has an empty or null previous link.) 
+
+		This additional link makes it possible to traverse the list in either direction. The entire list can be traversed starting from any element. A doubly-linked list has head and tail elements just like a singly-linked list.
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Common problems: 
+	Problems about efficient list traversal, list sorting, and the insertion or removal of data from either end of a list are good tests of basic data-structure concepts
