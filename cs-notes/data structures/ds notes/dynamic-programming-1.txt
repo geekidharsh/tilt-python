@@ -1,0 +1,10 @@
+DP is : 
+	general
+	powerful algorithm design technique
+	used for optimization
+	can also be regarded as a clever brute force.
+	dp ~ subproblems + reuse them.
+
+DP in fibonacci: 
+	f1 = f2 = 1
+	fn = fn-1 + fn-2
